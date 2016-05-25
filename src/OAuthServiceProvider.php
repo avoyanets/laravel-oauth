@@ -21,7 +21,7 @@ class OAuthServiceProvider extends ServiceProvider {
      */
     public function register()
     {
-        $this->app->bindShared('oauth', function($app)
+        $this->app->singleton('oauth', function($app)
         {
             return new Factory($factory, $storage);
         });
